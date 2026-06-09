@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ToyUtsav — India's Most Loved Toy Store</title>
+  <meta name="description" content="Discover India's biggest toy collection at ToyUtsav. From traditional handcrafted wooden toys to modern RC cars and STEM kits. Shop 20,000+ toys." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="landing.css" />
+</head>
+<body>
+
+<!-- ==================== NAVBAR ==================== -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <span class="logo-emoji">🎪</span>
+      <span class="logo-name">ToyUtsav</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#categories">Categories</a></li>
+      <li><a href="#featured">Featured</a></li>
+      <li><a href="#brands">Brands</a></li>
+      <li><a href="products.html" class="nav-cta">Shop All →</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ==================== HERO ==================== -->
+<section class="hero" id="hero">
+  <div class="hero-bg-blobs">
+    <span class="blob blob1"></span>
+    <span class="blob blob2"></span>
+    <span class="blob blob3"></span>
+  </div>
+
+  <!-- Floating animated toy emojis in hero -->
+  <div class="hero-floaters">
+    <span class="hf hf1">🚀</span>
+    <span class="hf hf2">🧩</span>
+    <span class="hf hf3">🎈</span>
+    <span class="hf hf4">⭐</span>
+    <span class="hf hf5">🎠</span>
+    <span class="hf hf6">🦁</span>
+    <span class="hf hf7">🎯</span>
+    <span class="hf hf8">🌈</span>
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-text">
+      <div class="hero-badge reveal-up">✨ 20,000+ Toys Available</div>
+      <h1 class="hero-title reveal-up delay1">
+        India's Most <br/>
+        <span class="gradient-text">Beloved</span> <br/>
+        Toy Store
+      </h1>
+      <p class="hero-subtitle reveal-up delay2">
+        From Channapatna wooden crafts to high-speed RC cars — discover joy for every child, every age, every occasion.
+      </p>
+      <div class="hero-actions reveal-up delay3">
+        <a href="products.html" class="btn-primary">
+          <span>Shop Now</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+        </a>
+        <a href="#categories" class="btn-outline">Browse Categories</a>
+      </div>
+      <div class="hero-stats reveal-up delay4">
+        <div class="stat"><span class="stat-num">20K+</span><span class="stat-lbl">Products</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num">4.9★</span><span class="stat-lbl">Rating</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num">50K+</span><span class="stat-lbl">Happy Kids</span></div>
+      </div>
+    </div>
+
+    <!-- Floating product photo cards -->
+    <div class="hero-cards reveal-right">
+      <div class="hero-card card-main">
+        <img src="https://rukminim2.flixcart.com/image/312/312/xif0q/remote-control-toy/f/h/b/high-speed-rc-car-rechargeable-remote-control-car-with-led-original-imagynkgwfrgztpb.jpeg?q=70" alt="RC Car" onerror="this.src='assets/rc_car.png'" />
+        <div class="card-label">🏎️ RC Sports Car <span>₹3,499</span></div>
+      </div>
+      <div class="hero-card card-top">
+        <img src="https://rukminim2.flixcart.com/image/312/312/xif0q/kids-scooty/v/p/f/scooter-for-kids-kick-scooter-3-wheel-scooter-for-kids-ledwheel-original-imagynkzj5zrgy6z.jpeg?q=70" alt="Scooter" onerror="this.src='assets/kick_scooter.png'" />
+        <div class="card-label">🛴 LED Scooter <span>₹2,899</span></div>
+      </div>
+      <div class="hero-card card-bottom">
+        <img src="https://rukminim2.flixcart.com/image/312/312/xif0q/role-play-toy/b/3/l/44-pcs-kitchen-set-toy-for-kids-big-kitchen-set-with-real-water-original-imagunr3z5efckvf.jpeg?q=70" alt="Kitchen Set" onerror="this.src='assets/kitchen_set.png'" />
+        <div class="card-label">🍳 Kitchen Set <span>₹3,999</span></div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Scroll indicator -->
+  <div class="scroll-indicator">
+    <span>Scroll to Explore</span>
+    <div class="scroll-dot"></div>
+  </div>
+</section>
+
+<!-- ==================== CATEGORY DISTRIBUTION (quick visual) ==================== -->
+<section class="category-distribution" id="categoryDistribution">
+  <div class="section-header reveal-up">
+    <span class="section-tag">Category Insights</span>
+    <h2>Category <span class="gradient-text">Distribution</span></h2>
+    <p>Proportion of toys across main categories (estimated)</p>
+  </div>
+  <div class="dist-chart" id="distChart" style="display:flex;gap:12px;align-items:end;padding:18px 20px;max-width:1100px;margin:0 auto">
+    <!-- bars rendered dynamically -->
+  </div>
+</section>
+
+<!-- ==================== TRUST BAR ==================== -->
+<section class="trust-bar">
+  <div class="trust-inner">
+    <div class="trust-item reveal-up">
+      <span class="ti-icon">🚚</span>
+      <div><strong>Free Shipping</strong><small>On orders above ₹499</small></div>
+    </div>
+    <div class="trust-item reveal-up delay1">
+      <span class="ti-icon">🛡️</span>
+      <div><strong>Safe & Certified</strong><small>BIS & CE Certified toys</small></div>
+    </div>
+    <div class="trust-item reveal-up delay2">
+      <span class="ti-icon">↩️</span>
+      <div><strong>Easy Returns</strong><small>7-day hassle-free returns</small></div>
+    </div>
+    <div class="trust-item reveal-up delay3">
+      <span class="ti-icon">💳</span>
+      <div><strong>Secure Payment</strong><small>UPI, Cards, EMI available</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== CATEGORIES ==================== -->
+<section class="categories-section" id="categories">
+  <div class="section-header reveal-up">
+    <span class="section-tag">Browse by Collection</span>
+    <h2>Shop by <span class="gradient-text">Category</span></h2>
+    <p>Curated collections for every kind of play</p>
+  </div>
+
+  <div class="categories-grid">
+    <a href="products.html?cat=Traditional+Indian" class="cat-card cat-1 reveal-up">
+      <div class="cat-icon-wrap">
+        <img src="https://rukminim2.flixcart.com/image/312/312/xif0q/toy/c/i/k/traditional-wooden-rocking-horse-push-pull-toys-for-babies-kids-original-imagvdkhhg7u3hha.jpeg?q=70" alt="Traditional" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+        <span class="cat-emoji-fallback" style="display:none">🐘</span>
+      </div>
+      <h3>Traditional Indian</h3>
+      <p>Handcrafted wooden toys & dolls</p>
+      <span class="cat-count">2,800+ toys</span>
+      <span class="cat-arrow">→</span>
+    </a>
+
+    <a href="products.html?cat=Vehicles+%26+RC" class="cat-card cat-2 reveal-up delay1">
+      <div class="cat-icon-wrap">
+        <img src="https://rukminim2.flixcart.com/image/312/312/xif0q/remote-control-toy/f/h/b/high-speed-rc-car-rechargeable-remote-control-car-with-led-original-imagynkgwfrgztpb.jpeg?q=70" alt="RC Cars" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+        <span class="cat-emoji-fallback" style="display:none">🏎️</span>
+      </div>
+      <h3>Vehicles & RC</h3>
+      <p>Remote control cars, trains & drones</p>
+      <span class="cat-count">3,200+ toys</span>
+      <span class="cat-arrow">→</span>
+    </a>
+
+    <a href="products.html?cat=Outdoor+%26+Active" class="cat-card cat-3 reveal-up delay2">
+      <div class="cat-icon-wrap">
+        <img src="https://rukminim2.flixcart.com/image/312/312/xif0q/kids-scooty/v/p/f/scooter-for-kids-kick-scooter-3-wheel-scooter-for-kids-ledwheel-original-imagynkzj5zrgy6z.jpeg?q=70" alt="Scooter" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+        <span class="cat-emoji-fallback" style="display:none">🛴</span>
+      </div>
+      <h3>Outdoor & Active</h3>
+      <p>Scooters, cycles & sports gear</p>
+      <span class="cat-count">2,400+ toys</span>
+      <span class="cat-arrow">→</span>
+    </a>
+
+    <a href="products.html?cat=STEM+%26+Learning" class="cat-card cat-4 reveal-up delay3">
+      <div class="cat-icon-wrap">
+        <img src="https://rukminim2.flixcart.com/image/312/312/xif0q/building-block/c/l/0/100-pcs-building-blocks-stem-toys-learning-educational-toy-for-original-imagvdkh5wg3pzuh.jpeg?q=70" alt="STEM" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+        <span class="cat-emoji-fallback" style="display:none">🔬</span>
+      </div>
+      <h3>STEM & Learning</h3>
+      <p>Science kits, robots & puzzles</p>
+      <span class="cat-count">2,900+ toys</span>
+      <span class="cat-arrow">→</span>
+    </a>
+
+    <a href="products.html?cat=Dolls+%26+Plush" class="cat-card cat-5 reveal-up delay1">
+      <div class="cat-icon-wrap">
+        <img src="https://rukminim2.flixcart.com/image/312/312/xif0q/stuffed-toy/b/c/c/teddy-bear-soft-toy-lovable-and-cute-soft-toy-for-kids-girls-original-imagvdkh7fzk2qgf.jpeg?q=70" alt="Plush" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+        <span class="cat-emoji-fallback" style="display:none">🧸</span>
+      </div>
+      <h3>Dolls & Plush</h3>
+      <p>Soft toys, dolls & collectibles</p>
+      <span class="cat-count">3,500+ toys</span>
+      <span class="cat-arrow">→</span>
+    </a>
+
+    <a href="products.html?cat=Creative+Arts" class="cat-card cat-6 reveal-up delay2">
+      <div class="cat-icon-wrap">
+        <img src="https://rukminim2.flixcart.com/image/312/312/xif0q/role-play-toy/b/3/l/44-pcs-kitchen-set-toy-for-kids-big-kitchen-set-with-real-water-original-imagunr3z5efckvf.jpeg?q=70" alt="Arts" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+        <span class="cat-emoji-fallback" style="display:none">🎨</span>
+      </div>
+      <h3>Creative Arts</h3>
+      <p>Kitchen sets, craft kits & music</p>
+      <span class="cat-count">2,100+ toys</span>
+      <span class="cat-arrow">→</span>
+    </a>
+
+    <a href="products.html?cat=Board+Games" class="cat-card cat-7 reveal-up delay3">
+      <div class="cat-icon-wrap">
+        <img src="https://rukminim2.flixcart.com/image/312/312/xif0q/board-game/t/7/x/chess-set-standard-chess-set-with-wooden-chess-board-original-imagvdkhhkwugqhg.jpeg?q=70" alt="Board" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+        <span class="cat-emoji-fallback" style="display:none">🎲</span>
+      </div>
+      <h3>Board Games</h3>
+      <p>Chess, Ludo, puzzles & strategy</p>
+      <span class="cat-count">1,800+ toys</span>
+      <span class="cat-arrow">→</span>
+    </a>
+
+    <a href="products.html?cat=3D+Model+Toys" class="cat-card cat-8 reveal-up delay4">
+      <div class="cat-icon-wrap">
+        <img src="assets/stem_robot.png" alt="3D Model Toys" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+        <span class="cat-emoji-fallback" style="display:none">🧊</span>
+      </div>
+      <h3>3D Model Toys</h3>
+      <p>Interactive models with local GLB previews</p>
+      <span class="cat-count">1,500+ toys</span>
+      <span class="cat-arrow">→</span>
+    </a>
+
+    <a href="products.html" class="cat-card cat-all reveal-up delay4">
+      <div class="cat-icon-wrap all-icon">
+        <span>+</span>
+      </div>
+      <h3>View All</h3>
+      <p>Explore our full collection</p>
+      <span class="cat-count">20,000+ toys</span>
+      <span class="cat-arrow">→</span>
+    </a>
+  </div>
+</section>
+
+<!-- ==================== FEATURED PRODUCTS ==================== -->
+<section class="featured-section" id="featured">
+  <div class="section-header reveal-up">
+    <span class="section-tag">Interactive 3D Preview</span>
+    <h2>Our <span class="gradient-text">Best Sellers</span></h2>
+    <p>Check our best sellers. Interact and turn them around right here!</p>
+  </div>
+
+  <div class="featured-grid">
+
+    <!-- Big featured card -->
+    <div class="featured-card big-card reveal-left">
+      <div class="feat-img-wrap" style="background:#f0f4f8;">
+        <model-viewer src="3d/Copilot3D-ea266e16-8976-4e77-9f32-0f6d354b5ca9.glb" alt="3D Model" camera-controls auto-rotate shadow-intensity="1" style="width:100%;height:100%;"></model-viewer>
+        <div class="feat-badge">🔥 Bestseller</div>
+      </div>
+      <div class="feat-info">
+        <span class="feat-cat">3D Model Toys</span>
+        <h3>Interactive 3D Robot Defender</h3>
+        <p>A fully playable 3D model right here in the card. Drag to rotate and zoom to see every detail.</p>
+        <div class="feat-meta">
+          <div class="feat-rating">⭐ 4.9 <small>(289 reviews)</small></div>
+          <div class="feat-age">Age: 8+ Years</div>
+        </div>
+        <div class="feat-price-row">
+          <div class="feat-price">₹3,499</div>
+          <a href="products.html" class="btn-primary-sm">Shop Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Vertical stack of 3 -->
+    <div class="featured-stack">
+
+      <div class="featured-card sm-card reveal-right">
+        <div class="feat-img-wrap" style="background:#fff3e0;">
+          <model-viewer src="3d/Copilot3D-bb56c427-cf5d-4b45-9d83-dd5177b5f9b5.glb" alt="3D Model" camera-controls auto-rotate shadow-intensity="1" style="width:100%;height:100%;"></model-viewer>
+          <div class="feat-badge new-badge">🌟 New</div>
+        </div>
+        <div class="feat-info">
+          <span class="feat-cat">3D Model Toys</span>
+          <h3>3D Speed RC Car</h3>
+          <div class="feat-meta">
+            <div class="feat-rating">⭐ 4.8 <small>(154)</small></div>
+            <div class="feat-age">Age: 5–10 Yrs</div>
+          </div>
+          <div class="feat-price-row">
+            <div class="feat-price">₹2,899</div>
+            <a href="products.html" class="btn-primary-sm">Shop Now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="featured-card sm-card reveal-right delay2">
+        <div class="feat-img-wrap" style="background:#e8f5e9;">
+          <model-viewer src="3d/Copilot3D-ba97fa7d-7e13-4797-8325-8b635ebf5a40.glb" alt="3D Model" camera-controls auto-rotate shadow-intensity="1" style="width:100%;height:100%;"></model-viewer>
+          <div class="feat-badge">✨ Premium</div>
+        </div>
+        <div class="feat-info">
+          <span class="feat-cat">3D Model Toys</span>
+          <h3>Interactive Mini Robot</h3>
+          <div class="feat-meta">
+            <div class="feat-rating">⭐ 4.9 <small>(265)</small></div>
+            <div class="feat-age">Age: 3–5 Yrs</div>
+          </div>
+          <div class="feat-price-row">
+            <div class="feat-price">₹3,999</div>
+            <a href="products.html" class="btn-primary-sm">Shop Now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="featured-card sm-card reveal-right delay3">
+        <div class="feat-img-wrap" style="background:#f3e5f5;">
+          <model-viewer src="3d/Copilot3D-a988a5ff-11cf-48e2-959f-9144b183cdef.glb" alt="3D Model" camera-controls auto-rotate shadow-intensity="1" style="width:100%;height:100%;"></model-viewer>
+          <div class="feat-badge heritage-badge">🏺 Classic</div>
+        </div>
+        <div class="feat-info">
+          <span class="feat-cat">3D Model Toys</span>
+          <h3>Classic Toy Airplane 3D</h3>
+          <div class="feat-meta">
+            <div class="feat-rating">⭐ 4.7 <small>(342)</small></div>
+            <div class="feat-age">Age: 3–5 Yrs</div>
+          </div>
+          <div class="feat-price-row">
+            <div class="feat-price">₹1,899</div>
+            <a href="products.html" class="btn-primary-sm">Shop Now</a>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /featured-stack -->
+  </div><!-- /featured-grid -->
+</section>
+
+<!-- Animated scrolling toy car container -->
+<div class="scroll-anim-car" id="scrollCarAnim">
+  <span style="font-size: 5rem;">🏎️</span>
+  <div class="speed-lines"></div>
+</div>
+
+<!-- ==================== AGE GUIDE STRIP ==================== -->
+<section class="age-strip">
+  <div class="section-header reveal-up">
+    <span class="section-tag">Find by Age</span>
+    <h2>Perfect Toys for <span class="gradient-text">Every Stage</span></h2>
+  </div>
+  <div class="age-cards">
+    <a href="products.html?age=0-2+Years" class="age-card reveal-up">
+      <span class="age-emoji">👶</span>
+      <strong>0–2 Years</strong>
+      <small>Sensory & Rattle Toys</small>
+    </a>
+    <a href="products.html?age=3-4+Years" class="age-card reveal-up delay1">
+      <span class="age-emoji">🧒</span>
+      <strong>3–4 Years</strong>
+      <small>Stacking & Pretend Play</small>
+    </a>
+    <a href="products.html?age=5-7+Years" class="age-card reveal-up delay2">
+      <span class="age-emoji">👦</span>
+      <strong>5–7 Years</strong>
+      <small>Board Games & Cycles</small>
+    </a>
+    <a href="products.html?age=8-11+Years" class="age-card reveal-up delay3">
+      <span class="age-emoji">🧑</span>
+      <strong>8–11 Years</strong>
+      <small>RC, STEM & Strategy</small>
+    </a>
+    <a href="products.html?age=12%2B+Years" class="age-card reveal-up delay4">
+      <span class="age-emoji">🧑‍🎓</span>
+      <strong>12+ Years</strong>
+      <small>Science & Creative Kits</small>
+    </a>
+  </div>
+</section>
+
+<!-- ==================== PARALLAX BANNER ==================== -->
+<section class="parallax-banner reveal-up">
+  <div class="pb-content">
+    <h2>🎁 Gifting Made Easy</h2>
+    <p>Celebrate birthdays, festivals & special moments with the perfect toy. Every order gift-wrapped free!</p>
+    <a href="products.html" class="btn-white">Browse Gift Ideas →</a>
+  </div>
+  <div class="pb-floaters">
+    <span>🎈</span><span>🎊</span><span>🎀</span><span>🎁</span><span>⭐</span>
+  </div>
+</section>
+
+<!-- ==================== BRANDS ==================== -->
+<section class="brands-section" id="brands">
+  <div class="section-header reveal-up">
+    <span class="section-tag">Trusted Brands</span>
+    <h2>Our <span class="gradient-text">Brand Partners</span></h2>
+  </div>
+  <div class="brands-marquee">
+    <div class="marquee-track">
+      <span>Channapatna Craft</span>
+      <span>KhelIndia</span>
+      <span>SmartKids</span>
+      <span>FlyHigh</span>
+      <span>FunTime</span>
+      <span>VedicToys</span>
+      <span>GigaBlocks</span>
+      <span>ElectroBot</span>
+      <span>Kondapalli Art</span>
+      <span>ToyUtsav Originals</span>
+      <!-- duplicated for loop -->
+      <span>Channapatna Craft</span>
+      <span>KhelIndia</span>
+      <span>SmartKids</span>
+      <span>FlyHigh</span>
+      <span>FunTime</span>
+      <span>VedicToys</span>
+      <span>GigaBlocks</span>
+      <span>ElectroBot</span>
+      <span>Kondapalli Art</span>
+      <span>ToyUtsav Originals</span>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-col brand-col">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-emoji">🎪</span>
+        <span class="logo-name">ToyUtsav</span>
+      </a>
+      <p>India's largest toy showcase. Celebrating play, learning, and heritage since 2020.</p>
+      <div class="footer-socials">
+        <a href="#">📘</a><a href="#">📸</a><a href="#">🐦</a><a href="#">▶️</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Collections</h4>
+      <ul>
+        <li><a href="products.html?cat=Traditional+Indian">Traditional Indian</a></li>
+        <li><a href="products.html?cat=Vehicles+%26+RC">Vehicles & RC</a></li>
+        <li><a href="products.html?cat=Outdoor+%26+Active">Outdoor & Active</a></li>
+        <li><a href="products.html?cat=STEM+%26+Learning">STEM & Learning</a></li>
+        <li><a href="products.html?cat=Dolls+%26+Plush">Dolls & Plush</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Information</h4>
+      <ul>
+        <li><a href="#">About ToyUtsav</a></li>
+        <li><a href="#">Shipping Policy</a></li>
+        <li><a href="#">Returns & Refunds</a></li>
+        <li><a href="#">Safety Standards</a></li>
+        <li><a href="#">Wholesale Enquiry</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li>📍 Bengaluru, Karnataka, India</li>
+        <li>📧 hello@toyutsav.in</li>
+        <li>📞 +91 80 2345 6789</li>
+        <li>🕙 Mon–Sat, 10am–7pm</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 ToyUtsav India. All Rights Reserved. | Toys tested for BIS & CE safety standards.</p>
+  </div>
+</footer>
+
+<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src="landing.js"></script>
+</body>
+</html>

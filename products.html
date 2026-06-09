@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shop All Toys — ToyUtsav</title>
+  <meta name="description" content="Browse 20,000+ premium toys at ToyUtsav. Filter by category, age, price and find the perfect toy for your child." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="products.css" />
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar scrolled" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <span class="logo-emoji">🎪</span>
+      <span class="logo-name">ToyUtsav</span>
+    </a>
+    <div class="nav-center">
+      <div class="search-wrap">
+        <svg class="search-icon" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+        </svg>
+        <input type="text" id="searchBar" placeholder="Search toys, brands, categories..." />
+        <button class="search-clear" id="searchClear" style="display:none">✕</button>
+      </div>
+    </div>
+    <div class="nav-right">
+      <button class="nav-icon-btn" id="wishlistBtn" title="Wishlist">
+        ❤️ <span class="icon-badge" id="wishlistBadge" style="display:none">0</span>
+      </button>
+      <button class="nav-icon-btn" id="cartBtn" title="Cart">
+        🛒 <span class="icon-badge" id="cartBadge" style="display:none">0</span>
+      </button>
+      <a href="index.html" class="btn-back">← Home</a>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="page-header-inner">
+    <div>
+      <h1 class="page-title">Shop All Toys</h1>
+      <p class="page-subtitle"><span id="totalCount">0</span> toys available across <span id="categoryCount">0</span> categories</p>
+    </div>
+    <div class="page-sort">
+      <label for="sortSelect">Sort:</label>
+      <select id="sortSelect">
+        <option value="featured">Featured</option>
+        <option value="price-asc">Price: Low → High</option>
+        <option value="price-desc">Price: High → Low</option>
+        <option value="rating">Top Rated</option>
+        <option value="name">Name A–Z</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN LAYOUT -->
+<div class="shop-layout">
+
+  <!-- ===== SIDEBAR ===== -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-section">
+      <h3 class="sidebar-title">Categories</h3>
+      <ul class="cat-filter-list" id="categoryList"></ul>
+    </div>
+
+    <div class="sidebar-section">
+      <h3 class="sidebar-title">Age Group</h3>
+      <div class="age-filters" id="ageGroupFilters"></div>
+    </div>
+
+    <div class="sidebar-section">
+      <h3 class="sidebar-title">
+        <span>Max Price</span>
+        <span id="priceMaxLabel" class="price-label">₹9,999</span>
+      </h3>
+      <input type="range" id="priceRange" class="price-slider" min="299" max="9999" step="100" value="9999" />
+      <div class="price-limits">
+        <span>₹299</span><span>₹9,999</span>
+      </div>
+    </div>
+
+    <div class="sidebar-section">
+      <h3 class="sidebar-title">Rating</h3>
+      <div class="rating-filters">
+        <label class="check-label"><input type="radio" name="rating" value="4.5"> ⭐ 4.5 & above</label>
+        <label class="check-label"><input type="radio" name="rating" value="4"> ⭐ 4.0 & above</label>
+        <label class="check-label"><input type="radio" name="rating" value="0" checked> All ratings</label>
+      </div>
+    </div>
+
+    <button class="btn-reset" id="resetFilters">✕ Clear All Filters</button>
+  </aside>
+
+  <!-- ===== PRODUCTS GRID ===== -->
+  <main class="products-main">
+    <!-- Dedicated 3D layer -->
+    <section class="models-layer" id="modelsLayer">
+      <div class="models-layer-head">
+        <h2>3D Showcase Layer</h2>
+        <p>Rotate and explore every GLB model directly in the catalog.</p>
+      </div>
+      <div class="models-grid" id="modelsGrid"></div>
+    </section>
+
+    <!-- Active filter pills -->
+    <div class="active-filters" id="activeFilters"></div>
+
+    <!-- Grid -->
+    <div class="products-grid" id="toysGrid"></div>
+
+    <!-- Load More / Spinner -->
+    <div class="load-more-area" id="infiniteScrollTrigger">
+      <div class="spinner"></div>
+      <span>Loading more toys…</span>
+    </div>
+  </main>
+
+</div>
+
+<!-- ===== PRODUCT DETAIL MODAL ===== -->
+<div class="modal-overlay" id="productModal">
+  <div class="modal-card">
+    <button class="modal-close" id="closeModalBtn">✕</button>
+    <div class="modal-body">
+      <!-- Left — Image + 3D toggle -->
+      <div class="modal-media">
+        <div class="modal-img-wrap">
+          <img id="modalImg" src="" alt="Product" />
+          <div class="modal-img-placeholder" id="modalImgPlaceholder">
+            <span></span>
+          </div>
+        </div>
+        <button class="btn-3d-toggle" id="toggle3DBtn" style="display:none">
+          🎮 Explore in 3D
+        </button>
+        <div class="modal-3d-canvas" id="modalCanvas" style="display:none"></div>
+        <div class="modal-color-picker" id="modalColorPanel" style="display:none"></div>
+      </div>
+
+      <!-- Right — Info -->
+      <div class="modal-info">
+        <span class="modal-breadcrumb" id="modalBreadcrumb">Category / Sub</span>
+        <h2 class="modal-title" id="modalTitle">Product Name</h2>
+
+        <div class="modal-rating-row">
+          <span class="modal-stars" id="modalRating">⭐ 4.9</span>
+          <span class="modal-reviews" id="modalReviews">(0 reviews)</span>
+          <span class="modal-instock">✓ In Stock</span>
+        </div>
+
+        <p class="modal-desc" id="modalDesc">Description here.</p>
+
+        <div class="modal-specs" id="modalSpecs"></div>
+
+        <div class="modal-price-area">
+          <div class="modal-price" id="modalPrice">₹0</div>
+          <div class="modal-price-note">Inclusive of all taxes</div>
+        </div>
+
+        <div class="modal-actions">
+          <button class="btn-cart-modal" id="modalAddCart">🛒 Add to Cart</button>
+          <button class="btn-wish-modal" id="modalAddWish">❤️ Wishlist</button>
+        </div>
+
+        <!-- Tags -->
+        <div class="modal-tags" id="modalTags"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CART PANEL ===== -->
+<div class="side-panel" id="cartPanel">
+  <div class="panel-hdr">
+    <h3>🛒 Cart</h3>
+    <button id="closeCartBtn">✕</button>
+  </div>
+  <div class="panel-list" id="cartList"></div>
+  <div class="panel-footer">
+    <div class="panel-total">
+      <span>Subtotal</span>
+      <strong id="cartTotal">₹0</strong>
+    </div>
+    <button class="btn-checkout" id="checkoutBtn">Place Order</button>
+  </div>
+</div>
+
+<!-- ===== WISHLIST PANEL ===== -->
+<div class="side-panel" id="wishlistPanel">
+  <div class="panel-hdr">
+    <h3>❤️ Wishlist</h3>
+    <button id="closeWishlistBtn">✕</button>
+  </div>
+  <div class="panel-list" id="wishlistList"></div>
+</div>
+
+<!-- Panel overlay -->
+<div class="panel-overlay" id="panelOverlay"></div>
+
+<!-- Scripts -->
+<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"></script>
+<script src="products.js"></script>
+</body>
+</html>
